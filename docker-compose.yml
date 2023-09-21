@@ -1,0 +1,24 @@
+version: '3.4'
+services:
+  redis:
+    image: redis:6
+    ports:
+      - "6379:6379"
+  redis1:
+    build:
+      context: .
+      dockerfile: example1.Dockerfile
+    ports:
+      - "6380:6379"
+  redis2:
+    build:
+      context: .
+      dockerfile: example2.Dockerfile
+    ports:
+      - "6381:6379"
+  redis3:
+    build:
+      context: .
+      dockerfile: example3.Dockerfile
+    ports:
+      - "6382:6379"
